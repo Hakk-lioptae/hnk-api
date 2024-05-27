@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('genre_in_singers', function (Blueprint $table) {
-            $table->uuid('id')->primary()->unique()->index();
-            $table->foreignUuid('genre_id')->constrained();
-            $table->foreignUuid('singers_id')->constrained();
+        Schema::create('delivery_address', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('genre_in_singers');
+        Schema::dropIfExists('delivery_address');
     }
 };

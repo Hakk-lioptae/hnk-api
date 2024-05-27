@@ -22,23 +22,22 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'phone',
         'dob',
-        'is_accept',
-        'type',
-        'token',
-        'token_expired',
-        'gender',
-        'vote_genre',
-        'fav_music',
+        'profile_photo',
+        'phone',
+        'email',
+        'password',
+        'verified_phone_at',
+        'verified_email_at',
     ];
 
     protected $table = 'users';
 
     protected $casts = [
-        'fav_music' => 'json',
-        'is_accept' => 'boolean',
+        'dob' => 'date',
+        'verified_phone_at' => 'datetime',
+        'verified_email_at' => 'datetime',
+
     ];
 
     public function image()
