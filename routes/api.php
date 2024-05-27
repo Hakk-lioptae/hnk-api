@@ -31,4 +31,4 @@ Route::group(['prefix' => 'profile'], function () {
 
 });
 
-Route::get('','');
+    Route::get('/item','UserController@register');

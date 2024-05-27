@@ -19,11 +19,8 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->longText('token')->nullable()->default(null);
-            $table->date('token_expired')->nullable()->default(null);
-            $table->string('vote_genre')->nullable()->default(null);
-            $table->rememberToken();
-            $table->auditColumns();
+            $table->datetime('verified_phone_at')->nullable();
+            $table->datetime('verified_email_at')->nullable();
         });
     }
 
